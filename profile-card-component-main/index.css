@@ -1,0 +1,75 @@
+/*
+Block-level Elements: 
+    A block-level element always starts on a new line and takes up the full width available 
+    (stretches out to the left and right as far as it can).
+
+Inline Elements
+    An inline element does not start on a new line and it only takes up as much width as necessary.
+
+Resource: https://css-tricks.com/when-do-you-use-inline-block/
+Resource: https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_span1
+div {
+    display: inline;        /* Displays an element as an inline element. Any height and width properties will have no effect.
+    display: inline-block;  /* Displays an element as an inline-level block container. You CAN set height and width values.
+    display: block;         /* Displays an element as a block element. Starts on a new line and takes up the whole width
+    display: run-in;        /* Not particularly well supported or common
+    display: none;          /* Hide
+}
+ ** An inline element cannot contain a block-level element!
+*/
+
+body {
+    background-color: #333;
+}
+/*Outter div top white box*/
+.box{
+    /*Position*/
+    display: inline-block;
+    
+    /*Shape, Size, and Color of span*/
+    width: 900px;
+    height: 200px;
+    margin: 10px;
+    background-color: #fefefe;;
+}
+
+.box span{
+    display: block;
+
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+
+    /*Orientation on Page*/
+    margin-top: 125px;
+    margin-left: 375px;
+}
+
+.bio-photo {
+    /*Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width */
+    display: block; 
+
+    /*Photo shape and size*/
+    border-radius: 50%; 
+    width: 150px;
+    height: auto;
+    border: 20px solid #ccc;
+
+} 
+
+.box2{
+    display: inline-block;
+    /*What does position do*/
+    position: relative;
+    /*What does z index do */
+    /* z-index: -10; */
+    /*Closes the gap between the first and second div*/
+    margin-top: -75px;
+    /* vertical-align: top; */
+
+    width: 900px;
+    height: 300px;
+    background-color: #ccc;
+
+}
+

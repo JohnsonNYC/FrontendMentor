@@ -1,0 +1,29 @@
+.container{
+    display: inline-block;
+    background-color: palegreen;
+
+    /*Responsible for size of div*/
+    width: 900px;
+    height: 200px;
+    margin: 10px;
+}
+
+.container span{
+    display: block;
+    background-color: palevioletred;
+
+    /*Responsible for size of <span>*/
+    width: 150px;
+    height: 150px;
+
+    margin-left: 375px;
+    margin-top: 125px
+}
+
+.photo{
+    border-radius: 50%;
+    width: 150px;
+    height: auto;
+
+
+}
