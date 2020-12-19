@@ -1,4 +1,14 @@
-/*
+/* QUESTIONS
+    Difference between Block element and Inline
+    Difference between display inline, inline-block, block
+
+    Best unit of measurement for responsiveness?
+    How to center child element with respect to parent element using position attribute?
+    What is the transform attribute and the translate function for centering?
+
+*/
+
+/* D I S P L A Y   A T T R I B U T E 
 Block-level Elements: 
     A block-level element always starts on a new line and takes up the full width available 
     (stretches out to the left and right as far as it can).
@@ -18,58 +28,116 @@ div {
  ** An inline element cannot contain a block-level element!
 */
 
+
+/* WIDTH AND HEIGHT FOR RESPONSIVENESSS
+    Using Percentage for width and height make the website responsive
+*/
+
+/* POSTION ATTRIBUTE RULES
+    So there are 5 main values of the Position Property:
+    
+    position: static | relative | absolute | fixed | sticky
+    
+    and additional properties for setting the coordinates of an element (I call them “helper properties”):
+    
+    top | right | bottom | left AND the z-index
+*/
+
+
+/* HOW TO CENTER BOTH VERTICALLY AND HORIZONTALLY
+    RESOURCE: https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/
+How to Center Both Vertically and Horizontally
+How to Center a Div Vertically and Horizontally with CSS Absolute Positioning and Negative Margins
+This is very similar to the method above to center an element vertically. Like last time, you must know the width and height of the element you want to center.
+
+Set the display property of the parent element to relative.
+
+Then set the child's display property to absolute, top to 50%, and left to 50%. This just centers the top left corner of the child element vertically and horizontally.
+
+To truly center the child element, apply a negative top margin set to half the child element's height, and a negative left margin set to half the child element's width:
+*/
+
+/* TRANSLATE ATTRIBUTE
+    This transform function moves an element sideways, or up and down.
+*/
+
 body {
-    background-color: #333;
+    background-color: gray;
 }
-/*Outter div top white box*/
+/* B L A C K  B O X */
 .box{
     /*Position*/
     display: inline-block;
-    
+    position: relative;
     /*Shape, Size, and Color of span*/
-    width: 900px;
-    height: 200px;
-    margin: 10px;
-    background-color: #fefefe;;
+    width: 25%;
+    height: 140px;
+    background-color: black;
 }
 
+/* I M A G E   C O N T A I N E R */
 .box span{
     display: block;
-
+    position: relative;
     width: 150px;
     height: 150px;
-    border-radius: 100%;
-
+    border: 1px solid plum;
     /*Orientation on Page*/
-    margin-top: 125px;
-    margin-left: 375px;
+    left: 30%;
+    top: 50%;
 }
-
+/* I M A G E   T A G */
 .bio-photo {
-    /*Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width */
     display: block; 
+    
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     /*Photo shape and size*/
-    border-radius: 50%; 
-    width: 150px;
+    /* border-radius: 50%;  */
+    width: 70%;
     height: auto;
-    border: 20px solid #ccc;
-
+    border: 5px solid #fefefe;
 } 
 
+/*S E C O N D   B O X   */
 .box2{
     display: inline-block;
-    /*What does position do*/
-    position: relative;
-    /*What does z index do */
-    /* z-index: -10; */
+    position: absolute;
+    /*Z-index places this behind other elements*/
+    z-index: -10;
     /*Closes the gap between the first and second div*/
     margin-top: -75px;
+
     /* vertical-align: top; */
 
-    width: 900px;
+    width: 100%;
     height: 300px;
-    background-color: #ccc;
-
+    background-color: #fefefe;
 }
 
+svg{
+    position:absolute;
+}
+
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: salmon;
+}
+
+.child {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
