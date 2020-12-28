@@ -5,6 +5,7 @@
     Best unit of measurement for responsiveness?
     How to center child element with respect to parent element using position attribute?
     What is the transform attribute and the translate function for centering?
+    How to have svg element fill it's div container
 
 */
 
@@ -13,19 +14,23 @@ Block-level Elements:
     A block-level element always starts on a new line and takes up the full width available 
     (stretches out to the left and right as far as it can).
 
+    <div> DIVS ARE BLOCK LEVEL ELEMENTS USED TO WRAP SECTIONS OF A DOCUMENT</div>
+
 Inline Elements
     An inline element does not start on a new line and it only takes up as much width as necessary.
 
-Resource: https://css-tricks.com/when-do-you-use-inline-block/
-Resource: https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_span1
-div {
-    display: inline;        /* Displays an element as an inline element. Any height and width properties will have no effect.
-    display: inline-block;  /* Displays an element as an inline-level block container. You CAN set height and width values.
-    display: block;         /* Displays an element as a block element. Starts on a new line and takes up the whole width
-    display: run-in;        /* Not particularly well supported or common
-    display: none;          /* Hide
-}
- ** An inline element cannot contain a block-level element!
+    <span> SPANS ARE INLINE LEVEL ELEMENTS USED TO WRAP SMALL PORTIONS OF TEXT, IMAGES, ETX</span>
+
+    Resource: https://css-tricks.com/when-do-you-use-inline-block/
+    Resource: https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_span1
+    div {
+        display: inline;        /* Displays an element as an inline element. Any height and width properties will have no effect.
+        display: inline-block;  /* Displays an element as an inline-level block container. You CAN set height and width values.
+        display: block;         /* Displays an element as a block element. Starts on a new line and takes up the whole width
+        display: run-in;        /* Not particularly well supported or common
+        display: none;          /* Hide
+    }
+    ** An inline element cannot contain a block-level element!
 */
 
 
@@ -41,6 +46,8 @@ div {
     and additional properties for setting the coordinates of an element (I call them “helper properties”):
     
     top | right | bottom | left AND the z-index
+
+    Resource: https://medium.com/@leannezhang/difference-between-css-position-absolute-versus-relative-35f064384c6
 */
 
 
@@ -63,30 +70,34 @@ To truly center the child element, apply a negative top margin set to half the c
 
 body {
     background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-/* B L A C K  B O X */
+
+/* S V G  T O P B O X */
 .box{
     /*Position*/
     display: inline-block;
     position: relative;
     /*Shape, Size, and Color of span*/
-    width: 25%;
+    width: 24%;
     height: 140px;
-    background-color: black;
 }
 
 /* I M A G E   C O N T A I N E R */
 .box span{
     display: block;
     position: relative;
-    width: 150px;
-    height: 150px;
-    border: 1px solid plum;
+    width: 140px;
+    height: 140px;
+
     /*Orientation on Page*/
     left: 30%;
     top: 50%;
 }
-/* I M A G E   T A G */
+
+/* I M A G E   E L E M E N T */
 .bio-photo {
     display: block; 
     
@@ -97,7 +108,7 @@ body {
     transform: translate(-50%, -50%);
 
     /*Photo shape and size*/
-    /* border-radius: 50%;  */
+    border-radius: 50%; 
     width: 70%;
     height: auto;
     border: 5px solid #fefefe;
@@ -116,28 +127,26 @@ body {
 
     width: 100%;
     height: 300px;
-    background-color: #fefefe;
+    /* background-color: #fefefe; */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 svg{
     position:absolute;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
+.card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 
-.container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-color: salmon;
-}
-
-.child {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* background-color: plum; */
 }
