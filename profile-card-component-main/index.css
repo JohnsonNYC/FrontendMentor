@@ -69,8 +69,9 @@ To truly center the child element, apply a negative top margin set to half the c
 */
 
 body {
-    background-color: gray;
-    display: flex;
+    background-color: hsl(185, 75%, 39%);
+    display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -80,8 +81,10 @@ body {
     /*Position*/
     display: inline-block;
     position: relative;
+    top: 10rem;
     /*Shape, Size, and Color of span*/
-    width: 24%;
+    /* width: 24%; */
+    width:350px;
     height: 140px;
 }
 
@@ -127,12 +130,12 @@ body {
 
     width: 100%;
     height: 300px;
-    /* background-color: #fefefe; */
+    background-color: #fefefe;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 
-svg{
+.banner{
     position:absolute;
     width: 100%;
     height: 100%;
@@ -145,8 +148,61 @@ svg{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    /* Cover the entirty of teh parent div */
     width: 100%;
     height: 100%;
 
-    /* background-color: plum; */
+    font-family: 'Kumbh Sans', sans-serif;
+
 }
+.name{
+    padding-top: 34%;
+    font-weight: 700;
+    color:hsl(229, 23%, 23%);
+}
+.location{
+    font-family: 'Kumbh Sans', sans-serif;
+    color:hsl(0, 0%, 59%);
+
+    position: relative;
+    top: 15px;
+}
+
+.analytics{
+    /* Styling the size of the analytics container */
+    width: 100%;
+    height: 30%;
+    border-top: 1px solid hsl(0, 0%, 59%);
+
+    /* Styling the position of the analytics container */
+    position:relative;
+    top: 10%;
+
+    /* Styling the inside of analytics container */
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    text-align: center;
+}
+
+.follows{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color:cadetblue; */
+}
+
+.numbers{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: hsl(229, 23%, 23%);
+}
+.title{
+    font-size: 13px;
+    letter-spacing: 1px;
+    color:hsl(0, 0%, 59%);
+}
+
